@@ -93,7 +93,7 @@ h6 {
 
 body {
    background: linear-gradient(
-      128deg,
+      0deg,
       rgba(0, 114, 154, 1) 0%,
       rgba(81, 201, 194, 1) 0%,
       rgba(50, 137, 210, 1) 45%,
@@ -119,7 +119,7 @@ body {
    background-color: rgba(186, 186, 186, 0.2);
 
    padding: 0 calc(5px + (30 - 5) * ((100vw - 320px) / (1920 - 320)));
-   row-gap: 20px;
+   row-gap: 1.43em;
    border-radius: 10px;
    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
       rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
@@ -165,12 +165,8 @@ body {
 }
 
 .bar {
-   /* width: calc(20px + (30 - 20) * ((100vw - 320px) / (1920 - 320)));
-   height: calc(20px + (30 - 20) * ((100vw - 320px) / (1920 - 320))); */
-
    cursor: pointer;
    display: inline-block;
-
    width: 0;
    height: 0;
    background: #fcfff5;
@@ -182,6 +178,15 @@ body {
    border-bottom-color: #51c9c2;
    border-left-color: transparent;
    transition: transform 0.5s ease-in-out;
+}
+
+.bar::before {
+   content: "";
+   display: block;
+   width: 50px;
+   height: 50px;
+   transform: translate(-50%, -50%);
+   overflow: hidden;
 }
 
 .navigation__block {
@@ -219,7 +224,7 @@ input[name="r"] {
 
 .navigation {
    display: flex;
-   column-gap: 10px;
+   column-gap: 15px;
 }
 
 #r1:checked ~ .navigation__block .n1 {
@@ -238,45 +243,37 @@ input[name="r"] {
    margin-left: -80%;
 }
 
-.navigation__item {
-   text-align: right;
-   display: block;
-   width: calc(33px + (70 - 33) * ((100vw - 320px) / (1920 - 320)));
-   height: calc(33px + (70 - 33) * ((100vw - 320px) / (1920 - 320)));
-   cursor: pointer;
+#r1:checked ~ .navigation__block .navigation label:nth-child(1),
+#r2:checked ~ .navigation__block .navigation label:nth-child(2),
+#r3:checked ~ .navigation__block .navigation label:nth-child(3),
+#r4:checked ~ .navigation__block .navigation label:nth-child(4),
+#r5:checked ~ .navigation__block .navigation label:nth-child(5) {
+   background-color: #fed67e;
 }
 
-/* #r1:checked ~ .navigation__block .navigation .navigation__item:nth-child(1) label,
-#r2:checked ~ .navigation__block .navigation .navigation__item:nth-child(2) label,
-#r3:checked ~ .navigation__block .navigation .navigation__item:nth-child(3) label,
-#r4:checked ~ .navigation__block .navigation .navigation__item:nth-child(4) label,
-#r5:checked ~ .navigation__block .navigation .navigation__item:nth-child(5) label {
-   background-color: #fed67e;
-} */
-
-#r1:checked ~ .navigation__block .navigation .navigation__item:nth-child(1) label:hover,
-#r2:checked ~ .navigation__block .navigation .navigation__item:nth-child(2) label:hover,
-#r3:checked ~ .navigation__block .navigation .navigation__item:nth-child(3) label:hover,
-#r4:checked ~ .navigation__block .navigation .navigation__item:nth-child(4) label:hover,
-#r5:checked ~ .navigation__block .navigation .navigation__item:nth-child(5) label:hover {
+#r1:checked ~ .navigation__block .navigation label:nth-child(1):hover,
+#r2:checked ~ .navigation__block .navigation label:nth-child(2):hover,
+#r3:checked ~ .navigation__block .navigation label:nth-child(3):hover,
+#r4:checked ~ .navigation__block .navigation label:nth-child(4):hover,
+#r5:checked ~ .navigation__block .navigation label:nth-child(5):hover {
    background-color: lightgreen;
 }
 
-#r1:checked ~ .navigation__block .navigation .navigation__item:nth-child(1) label:active,
-#r2:checked ~ .navigation__block .navigation .navigation__item:nth-child(2) label:active,
-#r3:checked ~ .navigation__block .navigation .navigation__item:nth-child(3) label:active,
-#r4:checked ~ .navigation__block .navigation .navigation__item:nth-child(4) label:active,
-#r5:checked ~ .navigation__block .navigation .navigation__item:nth-child(5) label:active {
-   background-color: transparent;
-}
-
-.navigation__item:hover .bar {
+.bar:hover {
    background-color: lightgreen;
    -webkit-transform: rotate(180deg);
    transform: rotate(180deg);
 }
 
-.navigation__item:active .bar {
+#r1:checked ~ .navigation__block .navigation label:nth-child(1):active,
+#r2:checked ~ .navigation__block .navigation label:nth-child(2):active,
+#r3:checked ~ .navigation__block .navigation label:nth-child(3):active,
+#r4:checked ~ .navigation__block .navigation label:nth-child(4):active,
+#r5:checked ~ .navigation__block .navigation label:nth-child(5):active {
+   background-color: transparent;
+}
+
+.bar:active {
    background-color: transparent;
 }
 
@@ -309,17 +306,14 @@ input[name="r"] {
    .navigation__block {
       flex-direction: column;
       align-items: center;
-      row-gap: 10px;
+      row-gap: 1.43em;
    }
    .slides__text {
       order: 2;
       align-self: flex-start;
    }
    .description p {
-      font-size: 20px;
-      line-height: 20px;
-   }
-   .navigation__item {
-      text-align: center;
+      font-size: 1.43em;
+      line-height: 1.43em;
    }
 }
