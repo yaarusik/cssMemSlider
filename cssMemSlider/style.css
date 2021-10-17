@@ -233,7 +233,7 @@ input[name="r"] {
 
 .navigation {
    display: flex;
-   column-gap: 15px;
+   column-gap: 1rem;
 }
 
 #r1:checked ~ .navigation__block .n1 {
