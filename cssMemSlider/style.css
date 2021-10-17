@@ -126,6 +126,7 @@ body {
 }
 
 .slidershow {
+   margin-left: 00%;
    max-width: calc(300px + (1200 - 300) * ((100vw - 320px) / (1920 - 320)));
    overflow: hidden;
 }
@@ -141,10 +142,17 @@ body {
    transition: all 0.2s ease-out;
    border-radius: 10px;
    overflow: hidden;
+   display: flex;
+   max-width: 75rem;
+   max-height: 31.875rem;
 }
 
 .slide img {
-   width: 100%;
+   display: block;
+   object-fit: contain;
+   border: 4px solid #fed67e;
+   border-radius: 10px;
+   width: 50%;
 }
 
 #r1:checked ~ .slidershow .s1 {
@@ -183,8 +191,8 @@ body {
 .bar::before {
    content: "";
    display: block;
-   width: 50px;
-   height: 50px;
+   width: calc(50px + (75 - 50) * ((100vw - 320px) / (1920 - 320)));
+   height: calc(50px + (75 - 50) * ((100vw - 320px) / (1920 - 320)));
    transform: translate(-50%, -50%);
    overflow: hidden;
 }
@@ -196,7 +204,7 @@ body {
 }
 
 .slides__text {
-   max-width: calc(180px + (500 - 180) * ((100vw - 320px) / (1920 - 320)));
+   max-width: calc(300px + (600 - 300) * ((100vw - 320px) / (1920 - 320)));
    overflow: hidden;
 }
 
@@ -213,8 +221,9 @@ body {
 
 .description p {
    width: 100%;
-   font-size: calc(26px + (40 - 20) * ((100vw - 320px) / (1920 - 320)));
-   line-height: calc(26px + (40 - 20) * ((100vw - 320px) / (1920 - 320)));
+
+   font-size: calc(10px + (35 - 10) * ((100vw - 320px) / (1920 - 320)));
+   line-height: calc(10px + (35 - 10) * ((100vw - 320px) / (1920 - 320)));
    color: black;
 }
 
@@ -277,13 +286,22 @@ input[name="r"] {
    background-color: transparent;
 }
 
-@media (min-width: 1920px) {
+@media (min-width: 1921px) {
    .navigation__block {
       width: 1200px;
    }
 
    .slides__text {
       max-width: 500px;
+      overflow: hidden;
+   }
+
+   .bar::before {
+      content: "";
+      display: block;
+      width: 70px;
+      height: 70px;
+      transform: translate(-50%, -50%);
       overflow: hidden;
    }
 
@@ -298,7 +316,7 @@ input[name="r"] {
       border-width: 30px;
    }
    .description p {
-      font-size: 50px;
+      font-size: 35px;
    }
 }
 
