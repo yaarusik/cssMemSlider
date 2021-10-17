@@ -120,13 +120,13 @@ body {
 
    padding: 0 calc(5px + (30 - 5) * ((100vw - 320px) / (1920 - 320)));
    row-gap: 1.43em;
-   border-radius: 10px;
+   border-radius: 0.625rem;
    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
       rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 .slidershow {
-   margin-left: 00%;
+   margin-left: 0%;
    max-width: calc(300px + (1200 - 300) * ((100vw - 320px) / (1920 - 320)));
    overflow: hidden;
 }
@@ -140,7 +140,7 @@ body {
 .slide {
    width: 20%;
    transition: all 0.2s ease-out;
-   border-radius: 10px;
+   border-radius: 0.625rem;
    overflow: hidden;
    display: flex;
    max-width: 75rem;
@@ -150,8 +150,8 @@ body {
 .slide img {
    display: block;
    object-fit: contain;
-   border: 4px solid #fed67e;
-   border-radius: 10px;
+   border: 0.25rem solid #fed67e;
+   border-radius: 0.625rem;
    width: 50%;
 }
 
@@ -288,35 +288,35 @@ input[name="r"] {
 
 @media (min-width: 1921px) {
    .navigation__block {
-      width: 1200px;
+      width: 75rem;
    }
 
    .slides__text {
-      max-width: 500px;
+      max-width: 31.25rem;
       overflow: hidden;
    }
 
    .bar::before {
       content: "";
       display: block;
-      width: 70px;
-      height: 70px;
+      width: 4.375rem;
+      height: 4.375rem;
       transform: translate(-50%, -50%);
       overflow: hidden;
    }
 
    .slider__body {
-      height: 800px;
+      height: 50rem;
    }
 
    .slidershow {
-      max-width: 1200px;
+      max-width: 75rem;
    }
    .bar {
-      border-width: 30px;
+      border-width: 1.875rem;
    }
    .description p {
-      font-size: 35px;
+      font-size: 2.1875rem;
    }
 }
 
